@@ -1,0 +1,9 @@
+FROM maven:3-jdk-7-alpine
+
+MAINTAINER Enrique Garcia <engapa@gmail.com>
+
+# Beam core dependencies by creating an example proyect
+RUN set -x \
+    && mvn dependency:get -Dartifact=org.apache.beam:beam-sdks-java-core:2.0.0:jar
+
+ENTRYPOINT bash
